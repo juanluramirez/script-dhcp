@@ -13,9 +13,9 @@ if sys.argv[1] == "-l":
 	print reservas_IP
 
 else: 
-	concesiones_clientes = commands.getoutput("cat /var/lib/dhcp/dhcpd.leases |grep 'hardware ethernet' |sort |uniq|awk '{print $3}'"
-	concesion_clientes = concesion_clientes.replace(";", "");
-	if len(concesion_clientes) > 0:
+	concesiones_clientes = commands.getoutput("cat /var/lib/dhcp/dhcpd.leases |grep 'hardware ethernet' |sort |uniq|awk '{print $3}'")
+	concesiones_clientes = concesiones_clientes.replace(";", "");
+	if len(concesiones_clientes) > 0:
 		print "IP;",sys.argv[1]
 		print "MAC:",concesion
 	else:
